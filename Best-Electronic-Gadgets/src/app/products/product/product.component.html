@@ -1,0 +1,36 @@
+<app-spinner *ngIf="isLoading" ></app-spinner>
+<div class="container" *ngIf="product" >
+    <div class="row">
+        <div class="col-md-6">
+            <p class="h2">Product Details</p>
+            <table class="table table-secondary">
+                <tbody>
+                    <tr>
+                        <th>Product Name</th>
+                        <td>{{product.name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Brand</th>
+                        <td>{{product.brand}}</td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <td>{{product.price}}</td>
+                    </tr>
+                    <tr>
+                        <th>Manufactured Year</th>
+                        <td>{{product.manufacturedYear}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-5">
+                <button class="btn btn-primary me-2" (click)="onEdit()" >Edit</button>
+                <button class="btn btn-secondary me-2" (click)="onBack()" >Back</button>
+                <button class="btn btn-danger" (click)="onDelete()" >Delete</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img [src]="product.imageUrl" alt="img" class="img-thumbnail shadow">
+        </div>
+    </div>
+</div>
